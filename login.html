@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login | SnorkelMap</title>
+    <link rel ="icon" href="/assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-    
+
+<div class="login-flex">
+    <div class="login-flex__themic-image-cont">
+    </div>
+    <div class="login-flex__form-cont">
+        <a href="/">
+            <img class="login-flex__logo" src="assets/images/snorkelmap-logo.svg" alt="SnorkelMap Logo">
+        </a>
+        <h1>Login</h1>
+
+        <form method="none" action="">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        <button type="submit">Login</button>
+        </form>
+
+        <div class="login-flex__forgot-link">
+            <div>Dont have an account? <a href="#">Sign Up</a></div>
+            
+            <a href="#">Forgot your password?</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/js/login.js"></script>
 </body>
 </html>

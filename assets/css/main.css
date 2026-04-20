@@ -1,0 +1,372 @@
+/* Fonts */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/inter-v20-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/inter-v20-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-300italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  src: url('../fonts/inter-v20-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* Colour Variables */
+:root {
+  --sm-page-bg: #F5F8FA;
+  --sm-card-bg: #FEFEFE;
+  --sm-primary-accent: #0096CD;
+
+  /* Form colours */
+  --sm-field-bg: #F9FBFC;
+  --sm-field-bg-focus-hover: #EFF7FD;
+  --sm-field-bg-disabled: #E7E8E9;
+  --sm-field-border-default: #D1E5ED;
+  --sm-field-border-invalid: #E62107;
+  --sm-field-border-disabled: #DAD7D7;
+  --sm-field-value: #145069;
+  --sm-field-value-disabled: #5E6466;
+
+  /* Header Colours */
+  --sm-header-bg: #FAFAFA;
+  --sm-header-border: #E0DEDE;
+
+  /* Text colours */
+  --sm-dark-text-headings: #2A7A9B;
+  --sm-text-3rd-grey: #484848;
+
+  /* Action Colours */
+  --sm-action-clear-bg-blue-txt: #2980A3;
+  --sm-action-clear-bg-blue-txt-hover: #06577a;
+  --sm-action-light-blue: #D4F2FF;
+  --sm-action-blue-hover: #06577a;
+  --sm-action-dark-blue-text: #145069;
+
+  --sm-hover-blue: #90D3F0;
+  --sm-disabled: #c5c5c5;
+  --sm-white: #fff;
+
+}
+
+/* Universal styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--sm-page-bg);
+    font-family: 'Inter', sans-serif;
+}
+a {
+    color: var(--sm-primary-accent);
+}
+a:hover {
+    color: var(--sm-action-dark-blue-text);
+}
+h1 {
+    color: var(--sm-dark-text-headings);
+    font-weight: 500;
+}
+button, input[type=submit] {
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--sm-action-light-blue);
+  color: var(--sm-action-dark-blue-text);
+  border-radius: 100vw;
+  border: none;
+}
+  button:hover, input[type=submit]:hover {
+    background-color: var(--sm-hover-blue);
+    cursor: pointer;
+  }
+  input[type=submit]:disabled {
+    background-color: var(--sm-disabled);
+    color: var(--sm-field-value-disabled);
+  }
+
+/* Navigation Styles */
+.navbar {
+    height: 72px;
+    width: 100%;
+    background-color: var(--sm-header-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom:  1px solid var(--sm-header-border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 16px;
+    box-sizing: border-box;
+}
+    .navbar__container {
+        display: flex;
+        width: 100%;
+        max-width: 1120px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar__logo {
+        width: 176px;
+        height: auto;
+    }
+    .desktop-nav {
+
+    }
+        .desktop-navigation__list {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+            .desktop-navigation__link {
+                color: var(--sm-action-clear-bg-blue-txt);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: 0.2s color ease-in-out;
+                border-radius: 60px;
+                padding: 8px 12px;
+            }
+            .desktop-navigation__link:hover {
+                color: var(--sm-action-clear-bg-blue-txt-hover);
+                background-color: #eff5f9;
+                text-decoration: none;
+            }
+            .desktop-navigation__link--hero {
+                border-radius: 40px;
+                color: var(--sm-action-dark-blue-text);
+                background-color: var(--sm-action-light-blue);
+                padding: 8px 16px;
+                transition: 0.2s all ease-in-out;
+            }
+            .desktop-navigation__link--hero:hover {
+                background-color:   var(--sm-action-blue-hover);
+                color: var(--sm-white);
+            }
+                .desktop-navigation__icon {
+                    height: 20px;
+                    width: auto;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                    .icon--nav {
+                        mask: url("../icons/nav-map.svg") no-repeat center / contain; -webkit-mask: url("../icons/nav-map.svg") no-repeat center / contain; background-color: currentColor;
+                    }
+    @media screen and (max-width: 879px) {
+        .desktop-nav {
+            display: none;
+        }
+    }
+.offset {
+    height: 72px;
+    width: 100%;
+    min-height: 72px;
+}
+
+/* Login Screen */
+.login-flex {
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    height: 100dvh;
+    column-gap: 32px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 24px;
+}
+    .login-flex__themic-image-cont {
+        height: 100%;
+        width: 100%;
+        border-radius: 24px;
+        position: relative;
+        background-color: #0096CD;
+        background-image: url('../images/coral.avif');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .login-flex__form-cont {
+        width: 100%;
+        max-width: 380px;
+        background-color: var(--sm-card-bg);
+        box-sizing: border-box;
+        display: flex;
+        padding: 40px 32px 24px 32px;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        box-shadow: 0 24px 16px 4px rgba(0, 0, 0, 0.04);
+        border-radius: 16px;
+    }
+    .login-flex__form-cont h1 {
+        margin: 0!important;
+    }
+    .login-flex__logo {
+        width: 198px;
+        height: 18px;
+    }
+    .login-flex__form-cont form {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-bottom: 24px;
+        border-bottom:  1px solid #D9D9D9;
+    }
+    .login-flex__form-cont form div {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    .login-flex__form-cont form div label {
+        font-weight: 300;
+        color: var(--sm-text-3rd-grey);
+    }
+    .login-flex__forgot-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+    .login-flex__forgot-link a {
+        text-decoration: none;
+        font-weight: 500;
+    }
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+input[type="password"]
+    
+    {
+        width: 100%;
+        display: flex;
+        padding: 8px 16px;
+        align-items: center;
+        align-self: stretch;
+        border-radius: 12px;
+        border: 1px solid var(--sm-field-border-default, #D1E5ED);
+        background: var(--sm-field-bg);
+        box-sizing: border-box;
+        line-height: 24px;
+    }
+
+
+/* Temp home page styles */
+.home-cont {
+  height: 100dvh;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .home-cont h1 {
+    margin: 0;
+    padding: 0 0 8px 0;
+  }
+  .home-main {
+    max-width: 1120px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    gap: 24px;
+  }
+  .home-cont-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 60%;
+    align-items: flex-start;
+  }
+  .home-cont-logo {
+    height: 24px;
+    width: auto;
+    margin-bottom: 8px;
+  }
+  .home-cont-right {
+    width: 40%;
+    display: flex;
+    position: relative;
+  }
+  .home-cont-right img {
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    height: auto;
+    object-fit: cover;
+    border-radius: 32px;
+  }
+  @media screen and (max-width: 600px) {
+    .home-main {
+      flex-wrap: wrap;
+    }
+    .home-cont-left {
+      width: 100%;
+    }
+    .home-cont-right {
+      width: 100%;
+    }
+    .home-cont-right img {
+      aspect-ratio: 16 / 10;
+    }
+  }
